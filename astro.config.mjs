@@ -4,7 +4,8 @@ import tailwindcss from '@tailwindcss/vite';
 
 // https://astro.build/config
 export default defineConfig({
-  site: 'https://example.com',
+  site: 'https://dxnale.github.io',
+  base: '/portfolio',
   i18n: {
     defaultLocale: "es",
     locales: ["es", "en"],
