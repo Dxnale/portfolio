@@ -12,7 +12,9 @@ const { lang } = Astro.params;
 const t = useTranslations(lang as keyof typeof languages);
 
 const isDefaultLang = lang === defaultLang;
-const pathPrefix = `/${lang}`;
+const BASE_URL = import.meta.env.BASE_URL;
+const finalBase = BASE_URL.endsWith('/') ? BASE_URL : `${BASE_URL}/`;
+const pathPrefix = `${finalBase}${lang}`;
 ---
 
 <BaseLayout title={t('home.title')} description={t('home.description')}>

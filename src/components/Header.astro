@@ -6,7 +6,9 @@ import { useTranslations, languages } from '../i18n/ui';
 const lang = getLangFromUrl(Astro.url);
 const t = useTranslations(lang);
 
-const base = `/${lang}`;
+const BASE_URL = import.meta.env.BASE_URL;
+const finalBase = BASE_URL.endsWith('/') ? BASE_URL : `${BASE_URL}/`;
+const base = `${finalBase}${lang}`;
 const links = [
   { href: `${base}/`, label: t('nav.home') },
   { href: `${base}/career`, label: t('nav.career') },
@@ -35,9 +37,19 @@ const links = [
     <div class="flex gap-2 text-sm">
       {Object.keys(languages).map((l) => {
         const currentPath = Astro.url.pathname;
-        const segments = currentPath.split('/');
-        segments[1] = l;
-        const href = segments.join('/');
+        let pathAfterBase = currentPath.startsWith(BASE_URL) ? currentPath.slice(BASE_URL.length) : currentPath;
+        if (pathAfterBase.startsWith('/')) pathAfterBase = pathAfterBase.slice(1);
+        
+        const parts = pathAfterBase.split('/');
+        
+        if (parts[0] in languages) {
+            parts[0] = l;
+        } else {
+            parts.unshift(l);
+        }
+        
+        const href = `${finalBase}${parts.join('/')}`;
+        
         return (
           <a
             href={href}
