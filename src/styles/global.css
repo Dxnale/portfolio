@@ -1,0 +1,77 @@
+@import "tailwindcss";
+
+@font-face {
+  font-family: 'GeistMono';
+  src: url('/fonts/GeistMono.ttf') format('truetype');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'IBM Plex Mono Medium';
+  src: url('/fonts/IBMPlexMono-Medium.ttf') format('truetype');
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+}
+
+@theme {
+  --color-ivory: #FFFFF0;
+  --color-dark: #1F1B18; /* Deep warm charcoal */
+  --color-muted: #A89F91; /* Muted ivory */
+  --color-brown: #4A3B32;
+  --color-charcoal: #333333;
+  --color-gold: #C5A059;
+  --font-medium: "IBM Plex Mono Medium", sans-serif;
+  --font-sans: "GeistMono", "Arial", sans-serif;
+}
+
+:root {
+  --background: var(--color-ivory);
+  --text-main: var(--color-charcoal);
+  --text-muted: var(--color-brown);
+  --accent: var(--color-brown);
+}
+
+.dark {
+  --background: var(--color-dark);
+  --text-main: var(--color-ivory);
+  --text-muted: var(--color-muted);
+  --accent: var(--color-gold);
+  --color-brown: #787054;
+}
+
+body {
+  background-color: var(--background);
+  color: var(--text-main);
+  font-family: var(--font-sans);
+  line-height: 1.6;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font-medium);
+  color: var(--accent);
+  font-weight: 700;
+  transition: color 0.3s ease;
+}
+
+a {
+  color: var(--color-brown);
+  text-decoration: none;
+  transition: color 0.2s ease;
+}
+
+a:hover {
+  color: var(--color-gold);
+}
+
+img {
+    border-radius: 0.8rem;
+}
+
+.astro-code {
+    border-radius: 0.8rem;
+    padding: 1.5rem;
+}

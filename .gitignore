@@ -1,0 +1,29 @@
+node_modules/
+.pnpm-store/
+
+# Archivos de compilación y salida
+dist/
+.astro/
+_site/
+*.tsbuildinfo
+
+# Archivos de entorno
+.env
+.env.local
+.env.*.local
+*.env
+.airflow_settings.yaml
+
+# Cachés y directorios de configuración específicos del sistema/IDE
+.DS_Store
+.vercel/
+.netlify/
+.idea/
+.vscode/
+*.code-workspace
+
+# Archivos de registro y resultados de pruebas
+*.log
+test-results/
+
+.agent/

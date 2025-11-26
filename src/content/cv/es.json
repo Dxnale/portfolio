@@ -1,0 +1,39 @@
+{
+  "name": "Daniel Torrealba",
+  "role": "Desarrollador de Software",
+  "summary": "Desarrollador de Software especializado en desarrollo backend e integraciones de sistemas, con más de 5 años de experiencia en transformación digital y automatización en los sectores financiero y ERP. Combina desarrollo práctico en Ruby on Rails, Python/Django y Java/Spring con una sólida base en metodologías Agile y plataformas cloud (AWS Certified).",
+  "experience": [
+    {
+      "role": "Analista de Integraciones",
+      "company": "Buk",
+      "startDate": "2024-12-01",
+      "endDate": "2025-07-01",
+      "current": false,
+      "description": "- Automaticé el proceso de centralización contable usando Ruby, reduciendo el tiempo de ejecución de 3+ horas a 25 minutos, procesando 180K+ registros mensuales mediante lotes paralelos.\n- Diseñé e implementé 23+ integraciones entre Buk y ERPs externos (NetSuite, SAP B1, Softland), procesando 2.5M+ transacciones/mes, incluyendo arquitectura de lógica de reintento y manejo de OAuth 2.0.\n- Eliminé cuellos de botella operativos (Consultas N+1) automatizando extracciones SQL (Active Record) que procesaron 3 años de datos históricos en <2 min vs. 45+ min anteriormente.\n- Reduje la dependencia técnica del área de Proyectos en un 60% mediante capacitación estructurada en herramientas de integración contable y desarrollo de documentación técnica interna."
+    },
+    {
+      "role": "Ingeniero de Software",
+      "company": "Abaqus Solutions",
+      "startDate": "2024-11-01",
+      "endDate": "2025-02-01",
+      "current": false,
+      "description": "- Mejoré la confiabilidad de pipelines de datos en un 30% mediante validación y manejo de excepciones.\n- Desarrollé scripts de automatización en Python (usando Pandas & Docker) para procesar reportes de inversión, reduciendo el tiempo de generación de tareas manuales de 2 horas a 10 minutos.\n- Colaboré con equipos técnicos y de negocio para identificar áreas de mejora y aplicar soluciones tecnológicas innovadoras que apoyaron la toma de decisiones estratégicas."
+    },
+    {
+      "role": "Líder de Proyecto de Transformación Digital",
+      "company": "Thomas J. Fiedler",
+      "startDate": "2020-12-01",
+      "endDate": "2024-11-01",
+      "current": false,
+      "description": "- Lideré la digitalización de inventario (implementación ERP), recepción de ventas, conciliación de caja y gestión de pagos (implementación pasarela de pagos) de las 5 sucursales de la empresa a nivel nacional.\n- Capacité a más de 30 empleados en el uso de software de gestión (ERP).\n- Implementé herramientas de control de stock digital que mejoraron la eficiencia operativa a nivel corporativo."
+    }
+  ],
+  "education": [
+    {
+      "degree": "Analista Programador",
+      "school": "Instituto Profesional Los Leones",
+      "year": "2025",
+      "description": "Enfoque: Desarrollo de software, bases de datos, metodologías ágiles"
+    }
+  ]
+}

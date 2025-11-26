@@ -1,0 +1,42 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import { languages, defaultLang, useTranslations } from '../../i18n/ui';
+
+export function getStaticPaths() {
+  return Object.keys(languages).map(lang => ({
+    params: { lang }
+  }));
+}
+
+const { lang } = Astro.params;
+const t = useTranslations(lang as keyof typeof languages);
+
+const isDefaultLang = lang === defaultLang;
+const pathPrefix = `/${lang}`;
+---
+
+<BaseLayout title={t('home.title')} description={t('home.description')}>
+  <section class="py-20">
+    <h1 class="text-4xl md:text-6xl font-medium font-bold text-accent mb-6">
+      {t('home.greeting')} <span class="text-gold">{t('home.nick')}</span>.
+    </h1>
+    <p class="text-xl md:text-2xl text-main/80 max-w-2xl leading-relaxed">
+      {t('home.intro')}
+    </p>
+    
+    <div class="mt-12 flex gap-4">
+      <a 
+        href={`${pathPrefix}/posts`} 
+        class="px-6 py-3 bg-brown rounded-lg text-ivory dark:bg-ivory dark:text-brown font-bold hover:bg-gold hover:text-brown dark:hover:bg-brown transition-colors"
+      >
+        {t('home.cta.posts')}
+      </a>
+      <a 
+        href={`${pathPrefix}/career`} 
+        class="px-6 py-3 bg-brown rounded-lg text-ivory dark:bg-ivory dark:text-brown font-bold hover:bg-gold hover:text-brown dark:hover:bg-brown transition-colors"
+      >
+        {t('home.cta.career')}
+      </a>
+    </div>
+  </section>
+</BaseLayout>

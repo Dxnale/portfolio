@@ -1,0 +1,39 @@
+{
+  "name": "Daniel Torrealba",
+  "role": "Software Engineer",
+  "summary": "Specialized in backend development and system integrations, leveraging 5+ years in digital transformation and automation across finance and ERP domains. Combines hands-on development in Ruby on Rails, Python/Django, and Java/Spring with a strong foundation in Agile methodologies and cloud platforms (AWS Certified).",
+  "experience": [
+    {
+      "role": "Integrations Analyst",
+      "company": "Buk",
+      "startDate": "2024-12-01",
+      "endDate": "2025-07-01",
+      "current": false,
+      "description": "- Automated accounting centralization process using Ruby, cutting runtime from 3+ hours to 25 minutes, processing 180K+ monthly records via parallel batch.\n- Designed and implemented 23+ integrations between Buk and external ERPs (NetSuite, SAP B1, Softland), processing 2.5M+ transactions/month, including retry logic architecture and OAuth 2.0 handling.\n- Eliminated operational bottlenecks (N+1 Queries) by automating SQL extractions (Active Record) that process 3 years of historical data in <2 min vs. 45+ min previously.\n- Reduced the Project area's technical dependency by 60% through structured training on accounting integration tools and the development of internal technical documentation"
+    },
+    {
+      "role": "Software Engineer",
+      "company": "Abaqus Solutions",
+      "startDate": "2024-11-01",
+      "endDate": "2025-02-01",
+      "current": false,
+      "description": "- Improved data pipeline reliability by 30% through validation and exception handling.\n- Developed Python automation scripts (using Pandas & Docker) to process investment reports, reducing manual task generation time from 2 hours to 10 minutes.\n- Worked in conjunction with technical and business teams to identify areas for improvement and apply innovative technological solutions that supported strategic decision-making."
+    },
+    {
+      "role": "Digital Transformation Project Lead",
+      "company": "Thomas J. Fiedler",
+      "startDate": "2020-12-01",
+      "endDate": "2024-11-01",
+      "current": false,
+      "description": "- Led the digitization of inventory (ERP implementation), sales reception, cash reconciliation and payment management (payment gateway implementation) of the company's 5 branches nationwide.\n- Trained more than 30 employees in the use of management software (ERP).\n- Implemented digital stock control tools that improved operational efficiency at a corporate level."
+    }
+  ],
+  "education": [
+    {
+      "degree": "Programmer Analyst",
+      "school": "Instituto Profesional Los Leones",
+      "year": "2025",
+      "description": "Focus: Software development, databases, agile methodologies"
+    }
+  ]
+}

@@ -1,0 +1,62 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import { languages, useTranslations } from '../../i18n/ui';
+import { getEntry } from 'astro:content';
+
+export function getStaticPaths() {
+  return Object.keys(languages).map(lang => ({
+    params: { lang }
+  }));
+}
+
+const { lang } = Astro.params;
+const t = useTranslations(lang as keyof typeof languages);
+const cv = await getEntry('cv', lang);
+
+if (!cv) {
+  throw new Error(`CV data not found for language: ${lang}`);
+}
+
+const { data } = cv;
+---
+
+<BaseLayout title={t('career.title')} description={t('career.description')}>
+  <section class="pb-20 pt-5">
+    <h1 class="text-4xl font-bold text-accent mb-6">{t('name')}</h1>
+    <div class="space-y-12">
+        <section>
+            <p class="text-lg leading-relaxed">{data.summary}</p>
+        </section>
+
+        <section>
+            <h2 class="text-2xl font-bold mb-6 text-accent">Experience</h2>
+            <div class="space-y-8">
+                {data.experience.map((job) => (
+                    <div class="border-l-2 border-accent pl-6 relative">
+                        <div class="absolute w-3 h-3 bg-accent rounded-full -left-[7px] top-2"></div>
+                        <h3 class="text-xl font-bold">{job.role}</h3>
+                        <div class="text-muted mb-2">
+                            {job.company} | {job.startDate} - {job.current ? 'Present' : job.endDate}
+                        </div>
+                        <p class="whitespace-pre-wrap">{job.description}</p>
+                    </div>
+                ))}
+            </div>
+        </section>
+
+        <section>
+            <h2 class="text-2xl font-bold mb-6 text-accent">Education</h2>
+            <div class="grid gap-6">
+                {data.education.map((edu) => (
+                    <div class="bg-secondary/5 pl-6 pr-6 rounded-lg">
+                        <h3 class="text-xl font-bold">{edu.degree}</h3>
+                        <div class="text-muted">
+                            {edu.school}, {edu.year}
+                        </div>
+                    </div>
+                ))}
+            </div>
+        </section>
+    </div>
+  </section>
+</BaseLayout>
